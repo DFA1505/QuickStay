@@ -3,7 +3,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { assets } from "../assets/assets";
 import { useClerk, useUser, UserButton } from "@clerk/clerk-react";
 
-// Ícone customizado para o menu do Clerk
 const BookIcon = () => (
   <svg
     className="w-4 h-4 text-gray-700"
@@ -55,7 +54,7 @@ const Navbar = () => {
           : "py-4 md:py-6 text-black bg-slate-500"
       }`}
     >
-      {/* --- LOGO --- */}
+      
       <Link to="/" className="z-50">
         <img
           src={assets.logo}
@@ -64,7 +63,6 @@ const Navbar = () => {
         />
       </Link>
 
-      {/* --- DESKTOP NAVIGATION --- */}
       <div className="hidden md:flex items-center gap-4 lg:gap-8">
         {navLinks.map((link, i) => (
           <Link
@@ -93,7 +91,7 @@ const Navbar = () => {
         )}
       </div>
 
-      {/* --- DESKTOP RIGHT (Search & Auth) --- */}
+
       <div className="hidden md:flex items-center gap-4">
         <svg
           className="h-6 w-6 cursor-pointer"
@@ -128,7 +126,6 @@ const Navbar = () => {
         )}
       </div>
 
-      {/* --- MOBILE CONTROLS (Hambúrguer e UserButton) --- */}
       <div className="flex items-center gap-4 md:hidden">
         {isSignedIn && (
           <UserButton afterSignOutUrl="/">
@@ -157,7 +154,6 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* --- MOBILE MENU OVERLAY --- */}
       <div
         className={`fixed top-0 left-0 w-full h-screen bg-white text-gray-800 flex flex-col items-center justify-center gap-8 font-semibold transition-transform duration-500 z-60 ${
           isMenuOpen ? "translate-x-0" : "translate-x-full"
